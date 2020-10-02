@@ -13,7 +13,7 @@ server.get("/", (req, res) => {
   res.status(200).json({ message: "Welcome to JSON Web Tokens API!" });
 });
 
-server.post("/signup", (req, res) => {
+server.post("/register", (req, res) => {
   const newUser = {
     ...req.body,
     password: bcrypt.hashSync(req.body.password, 10),
