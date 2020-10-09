@@ -43,7 +43,7 @@ server.post("/login", (req, res) => {
     });
 });
 
-server.get("/users", (req, res) => {
+server.get("/users", auth, (req, res) => {
   db.find()
     .then((rep) => {
       res.status(200).json({ data: rep });
